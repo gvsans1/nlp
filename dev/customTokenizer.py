@@ -94,27 +94,30 @@ print('Custom Tokenizer successfully in place: ', customTokenizerString('This is
 def customTokenizerVector(myText):
     '''Works only on plain string text, not vectorized'''
     
+    # Make NA in reviews blanks
+    myText = myText.fillna(' ')
+    
     # remove punctuation
     removePunct = str.maketrans('', '', string.punctuation)
     textNoPunct = myText.str.translate(removePunct)
-
+    
     # convert to lower case
     textNoPunctLower = textNoPunct.str.lower()
     
     # remove digits
     remove_digits = str.maketrans('', '', string.digits)
     textNoPunctLowerNoDigits = textNoPunctLower.str.translate(remove_digits)
-
+    
     # tokenize
-    tokenizedText = textNoPunctLowerNoDigits.map(word_tokenize())
-
+    tokenizedText = textNoPunctLowerNoDigits.map(word_tokenize)
+    
     # remove stop words
     stopWords = stopwords.words('english')
-    tokenizedTextNoStop = [y for y in tokenizedText if y not in stopWords]
-
+    tokenizedTextNoStop = tokenizedText.map(lambda txt: [y for y in txt if y not in stopWords])
+    
     # stem
     stemmer = SnowballStemmer('english')
-    tokenizedStems = [stemmer.stem(y) for y in tokenizedTextNoStop] 
+    tokenizedStems = tokenizedTextNoStop.map(lambda txt: [stemmer.stem(y) for y in txt] )
 
     return tokenizedStems
 

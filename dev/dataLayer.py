@@ -31,7 +31,7 @@ def importNlpTestData(numberOfReviews):
     
     df_test = df[df.index<numberOfReviews]
     
-    df_test.to_csv("data\nlpTestData.csv",sep="\t")
+    df_test.to_csv("nlpTestData.csv",sep="\t")
 
 #%%
 '''Read Test Data'''
