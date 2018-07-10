@@ -36,7 +36,7 @@ def importNlpTestData(numberOfReviews):
 #%%
 '''Read Test Data'''
 def readTestData():
-    pth = r'C:\Users\gsansone\py_test\NLP\dev\nlpTestData.csv'
+    pth = r'nlpTestData.csv'
     testData = pd.read_csv(pth, sep = "\t", engine='python')
     return testData
 #%%
