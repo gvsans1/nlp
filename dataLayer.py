@@ -26,7 +26,7 @@ def importNlpTestData(numberOfReviews):
         i += 1
       return pd.DataFrame.from_dict(df, orient='index')
     
-    pth = r"C:\Users\gsansone\py_test\data\reviews_Musical_Instruments_5.json.gz"
+    pth = r"data\reviews_Musical_Instruments_5.json.gz"
     df = getDF(pth)
     
     df_test = df[df.index<numberOfReviews]
