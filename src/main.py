@@ -74,3 +74,4 @@ y = regressionData.overall
 logitModel = sm.MNLogit(y, X)
 result = logitModel.fit()
 print(result.summary())
+
