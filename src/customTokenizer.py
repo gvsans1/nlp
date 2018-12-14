@@ -2,7 +2,9 @@
 
 # %%
 
-'''
+""""
+Custom Tokenizer module for Natural Language Processing
+
 Process:
 
 1. Prepare the data
@@ -21,9 +23,7 @@ Process:
     a. count (count vectorizer)
     b. term frequency-inverse document frequency (TFID)
 
-'''
 
-'''
 Terminology:
 
                            +------------------------+
@@ -36,7 +36,7 @@ Terminology:
 |           |'[...]'       |    0   |    0    |  0  |
 +-----------+--------------+--------+---------+-----+
     
-'''
+"""
 
 # %%
 '''Import Libraries'''
