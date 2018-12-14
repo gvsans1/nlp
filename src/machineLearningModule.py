@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
-'''This module defines a function that obtains Naive Bayes Classifier Fit 
-Scores'''
-'''It compares train/test performance of different tokenizers (custom vs 
-standard) and methodologies (CV vs TFID)'''
-'''This module requires the customTokenizer module to be imported'''
+"""
+This module defines a function that obtains Naive Bayes Classifier Fit 
+Scores. It compares train/test performance of different tokenizers (custom vs 
+standard) and methodologies (CV vs TFID). This module requires the 
+customTokenizer module to be imported.
+"""
 
 # %%
 
@@ -105,6 +106,7 @@ def getDocumentTermMatrix(x, TFID, customToken):
             tokens = cv.fit_transform(x).toarray()
             matrix = pd.DataFrame(tokens, columns=cv.get_feature_names())
             return matrix
+
 
 # %%
 
