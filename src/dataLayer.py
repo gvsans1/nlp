@@ -42,7 +42,8 @@ def importNlpTestData(numberOfReviews):
 '''Read Test Data'''
 
 
-def readTestData(pth):
+def readTestData():
+    pth = r'data/nlpTestData.csv'
     testData = pd.read_csv(pth, sep="\t", engine='python')
     return testData
 
