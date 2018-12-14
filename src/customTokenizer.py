@@ -43,7 +43,6 @@ Terminology:
 # import nltk
 
 # ONLY FIRST TIME
-# nltk.set_proxy("https://del-webproxy.blackrock.com:8080")
 # nltk.download('all')
 
 import string
