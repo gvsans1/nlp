@@ -42,12 +42,10 @@ def importNlpTestData(numberOfReviews):
 '''Read Test Data'''
 
 
-def readTestData():
-    pth = r'nlpTestData.csv'
+def readTestData(pth):
     testData = pd.read_csv(pth, sep="\t", engine='python')
     return testData
 
 
 # %%
-''''''
 print("Data Layer succesfully in place")
