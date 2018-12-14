@@ -12,7 +12,7 @@ import dataLayer
 '''Get Data'''
 
 dataLayer.importNlpTestData(10500)
-testData = dataLayer.readTestData()
+testData = dataLayer.readTestData(pth=r'nlpTestData.csv')
 
 # %%
 '''Run - Get vector of tokens (only as a test)'''
