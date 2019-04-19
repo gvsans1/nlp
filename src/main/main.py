@@ -71,7 +71,7 @@ cv_custom = \
         custom_token=True)
 
 # Keep only tokens above a certain percentile
-dataTop = \
+data_top = \
     reduce_document_term_matrix(
         chosen_matrix=cv_custom,
         method='percentile',
@@ -81,9 +81,9 @@ dataTop = \
 """
 5. Create dataset for regression
 """
-regressionData = \
+regression_data = \
     pd.merge(
-        dataTop,
+        data_top, 
         pd.DataFrame(test_data['overall']),
         how='left',
         left_index=True,
@@ -93,8 +93,8 @@ regressionData = \
 """
 6. Fit a Multinomial Logit
 """
-x = regressionData[dataTop.columns]
-y = regressionData.overall
+x = regression_data[data_top.columns]
+y = regression_data.overall
 logit_model = sm.MNLogit(y, x)
 result = logit_model.fit()
 print(result.summary())
