@@ -93,7 +93,7 @@ print('Custom Tokenizer successfully in place: ',
 
 
 def custom_tokenizer_vector(my_text):
-    """Works only on plain string text, not vectorized"""
+    """Works on an array of strings"""
 
     # Make NA in reviews blanks
     my_text = my_text.fillna(' ')
